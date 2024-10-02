@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#items-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Usando grid para criar duas colunas */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+.item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+input, select {
+    flex: 1; /* Os campos de entrada ocupam espaço na linha */
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-left: 10px; /* Adiciona um pequeno espaço entre o label e o campo */
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px; /* Adiciona um espaço entre os botões */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.remove-item {
+    background-color: #F44336; /* Vermelho */
+}
+
+.remove-item:hover {
+    background-color: #e53935;
+}
+
+.price-per-unit {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.highlight {
+    border: 2px solid yellow; /* Borda amarela para o melhor preço */
+}
+
+#calculate {
+    margin-top: 20px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .item {
+        width: 100%; /* Em telas pequenas, cada item ocupa a largura total */
+    }
+}
