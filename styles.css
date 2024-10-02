@@ -1,85 +1,117 @@
+/* Layout geral */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 20px;
-    padding: 0;
+    background-color: #f4f4f4;
 }
 
-h1 {
-    text-align: center;
-}
-
-#items-container {
+.container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Usando grid para criar duas colunas */
-    gap: 20px; /* Espaço entre os itens */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
+/* Estilo para cada item */
 .item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Campos de formulário estilizados */
+.item label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+    color: #555;
+}
+
+.item input[type="number"],
+.item input[type="text"],
+.item select {
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 130px);
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
-.input-group {
+.item .form-group {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 10px;
 }
 
-input, select {
-    flex: 1; /* Os campos de entrada ocupam espaço na linha */
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    margin-left: 10px; /* Adiciona um pequeno espaço entre o label e o campo */
-}
-
+/* Estilo para os botões */
 button {
-    padding: 10px;
-    background-color: #4CAF50; /* Verde */
-    color: white;
+    padding: 10px 20px;
     border: none;
+    background-color: #4CAF50;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px; /* Adiciona um espaço entre os botões */
+    font-size: 16px;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-.remove-item {
-    background-color: #F44336; /* Vermelho */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.remove-item:hover {
-    background-color: #e53935;
+#add-item {
+    background-color: #007BFF;
 }
 
-.price-per-unit {
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-.highlight {
-    border: 2px solid yellow; /* Borda amarela para o melhor preço */
+#add-item:hover {
+    background-color: #0056b3;
 }
 
 #calculate {
-    margin-top: 20px;
+    background-color: #FFC107;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
+#calculate:hover {
+    background-color: #e0a800;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-    .item {
-        width: 100%; /* Em telas pequenas, cada item ocupa a largura total */
+/* Destaque visual para o item com o melhor preço */
+.best-price {
+    border: 2px solid yellow;
+}
+
+/* Layout para telas pequenas (móveis) */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        max-width: 100%;
     }
+}
+
+/* Estilo para os radios */
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.radio-group label {
+    font-weight: normal;
 }
