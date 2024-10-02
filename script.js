@@ -56,11 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
             let pricePerUnit;
             if (unit === 'kg' || unit === 'g') {
                 pricePerUnit = price / (unit === 'kg' ? quantity : quantity / 1000); // Converte para kg
+                item.querySelector('.price-per-unit').textContent = `Preço por Kg: R$ ${pricePerUnit.toFixed(2)}`;
             } else {
                 pricePerUnit = price / (unit === 'litro' ? quantity : quantity / 1000); // Converte para litros
+                item.querySelector('.price-per-unit').textContent = `Preço por L: R$ ${pricePerUnit.toFixed(2)}`;
             }
 
-            item.querySelector('.price-per-unit').textContent = `Preço por ${unit}: R$ ${pricePerUnit.toFixed(2)}`;
+            
 
             if (pricePerUnit < bestPrice) {
                 bestPrice = pricePerUnit;
